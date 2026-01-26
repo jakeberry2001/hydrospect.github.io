@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Hydrospect | Hydrographic Survey & Consultancy</title>
-  <meta name="description" content="Hydrospect provides inland, nearshore, and offshore hydrographic survey services." />
+  <meta name="description" content="Hydrospect provides specialist survey and data support to projects in the inland, nearshore, and offshore domains." />
   
   <link rel="stylesheet" href="style.css">
 </head>
@@ -12,13 +12,24 @@
 
   <header>
     <div class="container">
-      <h1>Hydrospect</h1>
-      <p>Hydrographic survey services in support of the growing blue economy</p>
+      <nav class="navbar">
+        <div class="logo">HYDROSPECT</div>
+        <ul class="nav-links">
+          <li><a href="#about">About</a></li>
+          <li><a href="#services">Services</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+      
+      <div class="header-hero">
+        <h1>Precision Hydrography</h1>
+        <p>Expert survey services and technical consultancy supporting the global blue economy.</p>
+      </div>
     </div>
   </header>
 
   <main class="container">
-    <section>
+    <section id="about">
       <h2>About</h2>
       <p>
         Hydrospect provides specialist survey and data support to projects in the inland, nearshore, and offshore domains.
@@ -27,7 +38,7 @@
       </p>
     </section>
 
-    <section class="services">
+    <section id="services" class="services">
       <h2>Services</h2>
       <ul>
         <li>
@@ -45,7 +56,7 @@
       </ul>
     </section>
 
-    <section class="contact">
+    <section id="contact" class="contact">
       <h2>Contact</h2>
       <p>For enquiries or further information, please get in touch:</p>
       <p><a href="mailto:info@hydrospect.co.uk">info@hydrospect.co.uk</a></p>
@@ -53,13 +64,13 @@
   </main>
 
   <footer>
-    © <span id="year"></span> Hydrospect. All rights reserved.
+    <p>© <span id="year"></span> Hydrospect. All rights reserved.</p>
   </footer>
 
   <script>
+    // Automatically updates the year in the footer
     document.getElementById("year").textContent = new Date().getFullYear();
   </script>
 
 </body>
 </html>
-
