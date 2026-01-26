@@ -3,13 +3,17 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
   <title>Hydrospect | Offshore Survey & Consultancy</title>
+
   <meta name="description" content="Hydrospect provides offshore and nearshore survey services, data processing, and technical consultancy." />
+  <meta name="robots" content="index, follow" />
 
   <style>
     body {
       margin: 0;
-      font-family: Arial, Helvetica, sans-serif;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI",
+                   Roboto, Helvetica, Arial, sans-serif;
       line-height: 1.6;
       color: #333;
       background-color: #f7f9fc;
@@ -23,7 +27,8 @@
     }
 
     header h1 {
-      margin: 0;
+      margin: 0 auto;
+      max-width: 700px;
       font-size: 2.5rem;
     }
 
@@ -57,6 +62,12 @@
       padding: 1.2rem;
       border-left: 4px solid #0b3c5d;
       box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .services li:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 4px 10px rgba(0,0,0,0.08);
     }
 
     .contact {
@@ -72,6 +83,10 @@
       text-decoration: none;
     }
 
+    .contact a:hover {
+      text-decoration: underline;
+    }
+
     footer {
       text-align: center;
       padding: 2rem 1rem;
@@ -80,6 +95,7 @@
     }
   </style>
 </head>
+
 <body>
 
   <header>
@@ -104,8 +120,8 @@
     <ul>
       <li>
         <strong>Hydrographic & Geophysical Survey Support</strong><br />
-        Offshore and nearshore survey assistance, mobilisation support, and
-        operational guidance.
+        Offshore and nearshore survey assistance, mobilisation support,
+        and operational guidance.
       </li>
       <li>
         <strong>Data Processing & QC</strong><br />
@@ -121,17 +137,21 @@
 
   <section class="contact">
     <h2>Contact</h2>
-    <p>
-      For enquiries or further information, please get in touch:
-    </p>
+    <p>For enquiries or further information, please get in touch:</p>
     <p>
       <a href="mailto:info@hydrospect.co.uk">info@hydrospect.co.uk</a>
     </p>
   </section>
 
   <footer>
-    © 2026 Hydrospect. All rights reserved.
+    © <span id="year"></span> Hydrospect. All rights reserved.
   </footer>
+
+  <script>
+    document.getElementById("year").textContent =
+      new Date().getFullYear();
+  </script>
 
 </body>
 </html>
+
