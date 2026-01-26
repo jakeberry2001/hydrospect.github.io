@@ -17,7 +17,7 @@ body {
 .hero-header {
   /* This creates a dark overlay so text is readable */
   background: linear-gradient(rgba(11, 60, 93, 0.7), rgba(11, 60, 93, 0.7)), 
-              url('images/hero.jpg');
+              url('hero.jpg');
   background-size: cover;
   background-position: center;
   background-attachment: scroll; /* Change to 'fixed' for a parallax effect */
