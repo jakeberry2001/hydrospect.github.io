@@ -15,15 +15,16 @@ body {
 
 /* --- HERO HEADER WITH IMAGE --- */
 .hero-header {
-  /* This creates a dark overlay so text is readable */
-  background: linear-gradient(rgba(11, 60, 93, 0.7), rgba(11, 60, 93, 0.7)), 
-              url('hero.jpg');
+  background-color: #0b3c5d; 
+  /* Using the full URL ensures the browser finds it every time */
+  background-image: linear-gradient(rgba(11, 60, 93, 0.7), rgba(11, 60, 93, 0.7)), 
+                    url('https://hydrospect.co.uk/hero.jpg'); 
   background-size: cover;
-  background-position: center;
-  background-attachment: scroll; /* Change to 'fixed' for a parallax effect */
+  background-position: center center;
+  background-repeat: no-repeat;
   color: #fff;
   padding: 1.5rem 0 10rem 0;
-  min-height: 60vh; /* Ensures the banner is tall enough */
+  min-height: 60vh;
   display: flex;
   flex-direction: column;
 }
