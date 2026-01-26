@@ -16,7 +16,6 @@ body {
 /* --- HERO HEADER WITH IMAGE --- */
 .hero-header {
   background-color: #0b3c5d; 
-  /* Using the full URL ensures the browser finds it every time */
   background-image: linear-gradient(rgba(11, 60, 93, 0.7), rgba(11, 60, 93, 0.7)), 
                     url('https://hydrospect.co.uk/hero.jpg'); 
   background-size: cover;
@@ -25,8 +24,22 @@ body {
   color: #fff;
   padding: 1.5rem 0 10rem 0;
   min-height: 60vh;
-  display: flex;
-  flex-direction: column;
+  /* Remove display: flex from here so it doesn't force everything to the center */
+}
+
+.header-hero {
+  /* This ensures the text inside the hero stays left-aligned 
+     with the 'About' and 'Services' headers */
+  text-align: left; 
+  padding-top: 4rem;
+}
+
+.header-hero p {
+  font-size: 1.5rem;
+  opacity: 0.9;
+  max-width: 700px;
+  margin: 1.5rem 0 2.5rem 0;
+  /* Remove 'margin: 0 auto' if it was there, to keep it left-aligned */
 }
 
 .navbar {
