@@ -1,5 +1,8 @@
 /* --- Global Styles --- */
-html { scroll-behavior: smooth; }
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   margin: 0;
   font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
@@ -17,6 +20,7 @@ body {
 /* --- Hero Header --- */
 .hero-header {
   background-color: #0b3c5d; 
+  /* Using your live URL to ensure it loads across all devices */
   background-image: linear-gradient(rgba(11, 60, 93, 0.7), rgba(11, 60, 93, 0.7)), 
                     url('https://hydrospect.co.uk/hero.jpg'); 
   background-size: cover;
@@ -34,17 +38,43 @@ body {
   margin-bottom: 5rem;
 }
 
-.logo { font-weight: 800; font-size: 1.4rem; letter-spacing: 2px; }
-.nav-links { list-style: none; display: flex; gap: 2rem; margin: 0; padding: 0; }
-.nav-links a { color: #fff; text-decoration: none; font-weight: 500; }
+.logo {
+  font-weight: 800;
+  font-size: 1.4rem;
+  letter-spacing: 2px;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 2rem;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-links a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: 500;
+}
 
 .header-hero {
-  text-align: left;
+  text-align: left; /* Aligns with the rest of your site text */
   padding-top: 2rem;
 }
 
-.header-hero h1 { font-size: 3.5rem; margin: 0; line-height: 1.2; }
-.header-hero p { font-size: 1.3rem; opacity: 0.9; max-width: 700px; margin: 1.5rem 0 2.5rem 0; }
+.header-hero h1 {
+  font-size: 3.5rem;
+  margin: 0;
+  line-height: 1.2;
+}
+
+.header-hero p {
+  font-size: 1.3rem;
+  opacity: 0.9;
+  max-width: 700px;
+  margin: 1.5rem 0 2.5rem 0;
+}
 
 .cta-button {
   display: inline-block;
@@ -57,14 +87,27 @@ body {
   transition: 0.3s;
 }
 
-.cta-button:hover { background: #fff; color: #0b3c5d; }
+.cta-button:hover {
+  background: #fff;
+  color: #0b3c5d;
+}
 
 /* --- Sections --- */
-section { padding: 6rem 0; }
-h2 { color: #0b3c5d; font-size: 2.2rem; margin-bottom: 2rem; }
+section {
+  padding: 6rem 0;
+}
+
+h2 {
+  color: #0b3c5d;
+  font-size: 2.2rem;
+  margin-bottom: 2rem;
+}
 
 /* --- Services Grid --- */
-.services-section { background-color: #f4f7f9; }
+.services-section {
+  background-color: #f4f7f9;
+}
+
 .services-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -81,13 +124,31 @@ h2 { color: #0b3c5d; font-size: 2.2rem; margin-bottom: 2rem; }
   flex-direction: column;
 }
 
-.service-card:hover { transform: translateY(-10px); }
-.card-image { height: 200px; width: 100%; }
-.card-image img { width: 100%; height: 100%; object-fit: cover; }
-.card-content { padding: 2rem; }
-.card-content h3 { color: #0b3c5d; margin-top: 0; }
+.service-card:hover {
+  transform: translateY(-10px);
+}
 
-/* --- Contact Section & Copy Button --- */
+.card-image {
+  height: 200px;
+  width: 100%;
+}
+
+.card-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.card-content {
+  padding: 2rem;
+}
+
+.card-content h3 {
+  color: #0b3c5d;
+  margin-top: 0;
+}
+
+/* --- Contact Section & Pill-Style Email --- */
 .contact-box {
   background: #0b3c5d;
   color: #fff;
@@ -97,59 +158,119 @@ h2 { color: #0b3c5d; font-size: 2.2rem; margin-bottom: 2rem; }
 }
 
 .email-wrapper {
-  display: flex;
+  display: inline-flex;
   align-items: center;
   justify-content: center;
-  gap: 1rem;
+  background: rgba(255, 255, 255, 0.08);
+  padding: 0.6rem 1.2rem;
+  border-radius: 50px; /* Capsule/Pill shape */
+  border: 1px solid rgba(255, 255, 255, 0.15);
   margin-top: 1rem;
-  flex-wrap: wrap; /* Allows wrapping on small screens */
+  max-width: 95%; /* Keeps it inside the box on small screens */
 }
 
 .email-link {
   color: #fff;
-  font-size: 1.8rem;
+  font-size: 1.5rem;
   font-weight: bold;
   text-decoration: none;
-  border-bottom: 3px solid #328cc1;
-  word-wrap: break-word;
-  overflow-wrap: break-word;
+  border-bottom: 2px solid transparent;
+  transition: border-color 0.3s;
+  /* Prevents overflow */
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.email-link:hover {
+  border-bottom-color: #328cc1;
 }
 
 .copy-btn {
-  background: rgba(255,255,255,0.1);
+  background: transparent;
   border: none;
-  color: #fff;
-  padding: 8px;
-  border-radius: 5px;
+  color: #328cc1;
+  margin-left: 12px;
   cursor: pointer;
-  transition: 0.2s;
   display: flex;
   align-items: center;
+  position: relative;
+  padding: 5px;
+  transition: color 0.2s;
 }
 
-.copy-btn:hover { background: rgba(255,255,255,0.2); }
+.copy-btn:hover {
+  color: #fff;
+}
 
 #copy-status {
-  display: block;
-  margin-top: 10px;
-  font-size: 0.9rem;
-  color: #328cc1;
+  position: absolute;
+  top: -35px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #328cc1;
+  color: #fff;
+  padding: 4px 10px;
+  border-radius: 4px;
+  font-size: 0.75rem;
   opacity: 0;
+  pointer-events: none;
   transition: opacity 0.3s;
+  white-space: nowrap;
 }
 
 /* --- Footer --- */
-footer { text-align: center; padding: 4rem 0; color: #777; font-size: 0.9rem; }
+footer {
+  text-align: center;
+  padding: 4rem 0;
+  color: #777;
+  font-size: 0.9rem;
+}
 
 /* --- Mobile Queries --- */
 @media (max-width: 900px) {
-  .services-grid { grid-template-columns: 1fr; }
-  .navbar { flex-direction: column; gap: 1.5rem; margin-bottom: 3rem; }
-  .header-hero { text-align: center; }
-  .header-hero h1 { font-size: 2.2rem; }
-  .header-hero p { font-size: 1.1rem; margin: 1rem auto; }
+  .services-grid {
+    grid-template-columns: 1fr;
+  }
   
-  .contact-box { padding: 3rem 1rem; }
-  .email-link { font-size: 1.1rem; }
-  .copy-btn { padding: 12px; } /* Larger touch target for mobile */
+  .navbar {
+    flex-direction: column;
+    gap: 1.5rem;
+    margin-bottom: 3rem;
+  }
+
+  .header-hero {
+    text-align: center;
+  }
+
+  .header-hero h1 {
+    font-size: 2.2rem;
+  }
+
+  .header-hero p {
+    font-size: 1.1rem;
+    margin: 1rem auto;
+  }
+}
+
+@media (max-width: 600px) {
+  .contact-box {
+    padding: 3rem 1rem;
+  }
+
+  .email-wrapper {
+    padding: 0.5rem 1rem;
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  .email-link {
+    /* Fluid font size: scales between 0.9rem and 1.2rem based on screen width */
+    font-size: clamp(0.9rem, 4.5vw, 1.2rem);
+  }
+
+  .copy-btn svg {
+    width: 16px;
+    height: 16px;
+  }
 }
