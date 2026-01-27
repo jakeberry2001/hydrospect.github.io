@@ -92,7 +92,18 @@ section { padding: 6rem 0; }
 
 /* --- Contact & Footer --- */
 .contact-box { background: #0b3c5d; color: #fff; padding: 5rem 2rem; text-align: center; border-radius: 15px; }
-.email-link { color: #fff; font-size: 1.8rem; font-weight: bold; text-decoration: none; border-bottom: 3px solid #328cc1; }
+.email-link {
+  color: #fff;
+  font-size: 1.8rem;
+  font-weight: bold;
+  text-decoration: none;
+  border-bottom: 3px solid #328cc1;
+  
+  /* Added these two lines */
+  word-wrap: break-word;       /* Allows the email to break to a new line if needed */
+  overflow-wrap: break-word;   /* Modern browser support for breaking long strings */
+  display: inline-block;       /* Helps the border and wrapping behave correctly */
+}
 footer { text-align: center; padding: 4rem 0; color: #777; font-size: 0.9rem; }
 
 /* --- Mobile --- */
