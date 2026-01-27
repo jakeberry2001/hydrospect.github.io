@@ -5,6 +5,7 @@ body {
   font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
   line-height: 1.6;
   color: #333;
+  background-color: #fff;
 }
 
 .container {
@@ -13,7 +14,7 @@ body {
   padding: 0 2rem;
 }
 
-/* --- HERO HEADER WITH IMAGE --- */
+/* --- Hero Header --- */
 .hero-header {
   background-color: #0b3c5d; 
   background-image: linear-gradient(rgba(11, 60, 93, 0.7), rgba(11, 60, 93, 0.7)), 
@@ -24,37 +25,26 @@ body {
   color: #fff;
   padding: 1.5rem 0 10rem 0;
   min-height: 60vh;
-  /* Remove display: flex from here so it doesn't force everything to the center */
-}
-
-.header-hero {
-  /* This ensures the text inside the hero stays left-aligned 
-     with the 'About' and 'Services' headers */
-  text-align: left; 
-  padding-top: 4rem;
-}
-
-.header-hero p {
-  font-size: 1.5rem;
-  opacity: 0.9;
-  max-width: 700px;
-  margin: 1.5rem 0 2.5rem 0;
-  /* Remove 'margin: 0 auto' if it was there, to keep it left-aligned */
 }
 
 .navbar {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 8rem;
+  margin-bottom: 5rem;
 }
 
 .logo { font-weight: 800; font-size: 1.4rem; letter-spacing: 2px; }
 .nav-links { list-style: none; display: flex; gap: 2rem; margin: 0; padding: 0; }
 .nav-links a { color: #fff; text-decoration: none; font-weight: 500; }
 
-.header-hero h1 { font-size: 4rem; margin: 0; line-height: 1.1; }
-.header-hero p { font-size: 1.5rem; opacity: 0.9; max-width: 700px; margin: 1.5rem 0 2.5rem 0; }
+.header-hero {
+  text-align: left;
+  padding-top: 2rem;
+}
+
+.header-hero h1 { font-size: 3.5rem; margin: 0; line-height: 1.2; }
+.header-hero p { font-size: 1.3rem; opacity: 0.9; max-width: 700px; margin: 1.5rem 0 2.5rem 0; }
 
 .cta-button {
   display: inline-block;
@@ -64,13 +54,16 @@ body {
   text-decoration: none;
   font-weight: bold;
   border-radius: 5px;
-  transition: background 0.3s;
+  transition: 0.3s;
 }
 
 .cta-button:hover { background: #fff; color: #0b3c5d; }
 
-/* --- Services Grid --- */
+/* --- Sections --- */
 section { padding: 6rem 0; }
+h2 { color: #0b3c5d; font-size: 2.2rem; margin-bottom: 2rem; }
+
+/* --- Services Grid --- */
 .services-section { background-color: #f4f7f9; }
 .services-grid {
   display: grid;
@@ -83,33 +76,80 @@ section { padding: 6rem 0; }
   border-radius: 8px;
   box-shadow: 0 10px 30px rgba(0,0,0,0.05);
   overflow: hidden;
+  transition: transform 0.3s ease;
+  display: flex;
+  flex-direction: column;
 }
 
+.service-card:hover { transform: translateY(-10px); }
 .card-image { height: 200px; width: 100%; }
 .card-image img { width: 100%; height: 100%; object-fit: cover; }
 .card-content { padding: 2rem; }
 .card-content h3 { color: #0b3c5d; margin-top: 0; }
 
-/* --- Contact & Footer --- */
-.contact-box { background: #0b3c5d; color: #fff; padding: 5rem 2rem; text-align: center; border-radius: 15px; }
+/* --- Contact Section & Copy Button --- */
+.contact-box {
+  background: #0b3c5d;
+  color: #fff;
+  padding: 5rem 2rem;
+  text-align: center;
+  border-radius: 15px;
+}
+
+.email-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 1rem;
+  flex-wrap: wrap; /* Allows wrapping on small screens */
+}
+
 .email-link {
   color: #fff;
   font-size: 1.8rem;
   font-weight: bold;
   text-decoration: none;
   border-bottom: 3px solid #328cc1;
-  
-  /* Added these two lines */
-  word-wrap: break-word;       /* Allows the email to break to a new line if needed */
-  overflow-wrap: break-word;   /* Modern browser support for breaking long strings */
-  display: inline-block;       /* Helps the border and wrapping behave correctly */
+  word-wrap: break-word;
+  overflow-wrap: break-word;
 }
+
+.copy-btn {
+  background: rgba(255,255,255,0.1);
+  border: none;
+  color: #fff;
+  padding: 8px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: 0.2s;
+  display: flex;
+  align-items: center;
+}
+
+.copy-btn:hover { background: rgba(255,255,255,0.2); }
+
+#copy-status {
+  display: block;
+  margin-top: 10px;
+  font-size: 0.9rem;
+  color: #328cc1;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+/* --- Footer --- */
 footer { text-align: center; padding: 4rem 0; color: #777; font-size: 0.9rem; }
 
-/* --- Mobile --- */
+/* --- Mobile Queries --- */
 @media (max-width: 900px) {
   .services-grid { grid-template-columns: 1fr; }
-  .navbar { flex-direction: column; gap: 2rem; margin-bottom: 4rem; }
-  .header-hero h1 { font-size: 2.5rem; }
-  .hero-header { padding-bottom: 5rem; }
+  .navbar { flex-direction: column; gap: 1.5rem; margin-bottom: 3rem; }
+  .header-hero { text-align: center; }
+  .header-hero h1 { font-size: 2.2rem; }
+  .header-hero p { font-size: 1.1rem; margin: 1rem auto; }
+  
+  .contact-box { padding: 3rem 1rem; }
+  .email-link { font-size: 1.1rem; }
+  .copy-btn { padding: 12px; } /* Larger touch target for mobile */
 }
