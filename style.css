@@ -274,12 +274,7 @@ footer {
     font-size: 1.1rem;
     margin: 1rem 0; /* Changed '1rem auto' to '1rem 0' to remove auto-centering */
   }
-  .navbar {
-    flex-direction: column;
-    align-items: flex-start; /* Ensures logo and nav links stay left-aligned */
-    gap: 1.5rem;
-    margin-bottom: 3rem;
-  }
+  
   .email-wrapper {
     padding: 0.5rem 1rem;
     width: 100%;
