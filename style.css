@@ -59,8 +59,12 @@ body {
 }
 
 .header-hero {
-  text-align: left; /* Aligns with the rest of your site text */
+  text-align: left; 
   padding-top: 2rem;
+  /* Add this to ensure the container itself doesn't center its children */
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start; 
 }
 
 .header-hero h1 {
@@ -260,11 +264,22 @@ footer {
   }
 }
 
-@media (max-width: 600px) {
-  .contact-box {
-    padding: 3rem 1rem;
+@media (max-width: 900px) {
+  .header-hero {
+    text-align: left; /* Changed from center to left */
+    align-items: flex-start; /* Ensures button stays left-aligned */
   }
 
+  .header-hero p {
+    font-size: 1.1rem;
+    margin: 1rem 0; /* Changed '1rem auto' to '1rem 0' to remove auto-centering */
+  }
+  .navbar {
+    flex-direction: column;
+    align-items: flex-start; /* Ensures logo and nav links stay left-aligned */
+    gap: 1.5rem;
+    margin-bottom: 3rem;
+  }
   .email-wrapper {
     padding: 0.5rem 1rem;
     width: 100%;
