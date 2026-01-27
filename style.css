@@ -149,6 +149,13 @@ h2 {
 }
 
 /* --- Contact Section & Pill-Style Email --- */
+
+.contact-box h2 {
+  color: #fff; /* Forces the header to be white inside the blue box */
+  margin-top: 0;
+  margin-bottom: 1rem;
+}
+
 .contact-box {
   background: #0b3c5d;
   color: #fff;
