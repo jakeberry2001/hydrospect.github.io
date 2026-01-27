@@ -74,14 +74,32 @@
 </section>
 
   <section id="contact">
-    <div class="container">
-      <div class="contact-box">
-        <h2>Contact</h2>
-        <p>For enquiries or further information, please get in touch:</p>
-        <p><a href="mailto:info@hydrospect.co.uk" class="email-link">info@hydrospect.co.uk</a></p>
+  <div class="container">
+    <div class="contact-box">
+      <h2>Contact</h2>
+      <p>For enquiries or further information, please get in touch:</p>
+      
+      <div class="email-wrapper">
+        <a href="mailto:info@hydrospect.co.uk" class="email-link" id="emailAddr">info@hydrospect.co.uk</a>
+        <button class="copy-btn" onclick="copyEmail()" title="Copy to clipboard">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+        </button>
       </div>
+      <span id="copy-status">Copied!</span>
     </div>
-  </section>
+  </div>
+</section>
+
+<script>
+  function copyEmail() {
+    const email = document.getElementById('emailAddr').innerText;
+    navigator.clipboard.writeText(email).then(() => {
+      const status = document.getElementById('copy-status');
+      status.style.opacity = '1';
+      setTimeout(() => { status.style.opacity = '0'; }, 2000);
+    });
+  }
+</script>
 
   <footer>
     <p>© <span id="year"></span> Hydrospect. All rights reserved.</p>
