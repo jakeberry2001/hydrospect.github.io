@@ -20,7 +20,6 @@ body {
 /* --- Hero Header --- */
 .hero-header {
   background-color: #0b3c5d; 
-  /* Using your live URL to ensure it loads across all devices */
   background-image: linear-gradient(rgba(11, 60, 93, 0.7), rgba(11, 60, 93, 0.7)), 
                     url('https://hydrospect.co.uk/images/hero.jpg'); 
   background-size: cover;
@@ -61,7 +60,6 @@ body {
 .header-hero {
   text-align: left; 
   padding-top: 2rem;
-  /* Add this to ensure the container itself doesn't center its children */
   display: flex;
   flex-direction: column;
   align-items: flex-start; 
@@ -105,6 +103,48 @@ h2 {
   color: #0b3c5d;
   font-size: 2.2rem;
   margin-bottom: 2rem;
+}
+
+blockquote {
+  font-style: italic;
+  font-size: 1.2rem;
+  color: #555;
+  border-left: 4px solid #328cc1;
+  padding-left: 1.5rem;
+  margin: 2rem 0;
+}
+
+/* --- Featured Research Section --- */
+.research-container {
+  display: flex;
+  gap: 2rem;
+  align-items: center;
+  background: #f4f7f9;
+  padding: 2.5rem;
+  border-radius: 8px;
+}
+
+.research-image {
+  flex: 1;
+}
+
+.research-image img {
+  width: 100%;
+  border-radius: 5px;
+  display: block;
+}
+
+.research-content {
+  flex: 2;
+}
+
+.research-label {
+  color: #328cc1;
+  font-weight: bold;
+  text-transform: uppercase;
+  font-size: 0.8rem;
+  display: block;
+  margin-bottom: 0.5rem;
 }
 
 /* --- Services Grid --- */
@@ -152,14 +192,7 @@ h2 {
   margin-top: 0;
 }
 
-/* --- Contact Section & Pill-Style Email --- */
-
-.contact-box h2 {
-  color: #fff; /* Forces the header to be white inside the blue box */
-  margin-top: 0;
-  margin-bottom: 1rem;
-}
-
+/* --- Contact Section --- */
 .contact-box {
   background: #0b3c5d;
   color: #fff;
@@ -168,16 +201,22 @@ h2 {
   border-radius: 15px;
 }
 
+.contact-box h2 {
+  color: #fff;
+  margin-top: 0;
+  margin-bottom: 1rem;
+}
+
 .email-wrapper {
   display: inline-flex;
   align-items: center;
   justify-content: center;
   background: rgba(255, 255, 255, 0.08);
   padding: 0.6rem 1.2rem;
-  border-radius: 50px; /* Capsule/Pill shape */
+  border-radius: 50px;
   border: 1px solid rgba(255, 255, 255, 0.15);
   margin-top: 1rem;
-  max-width: 95%; /* Keeps it inside the box on small screens */
+  max-width: 95%;
 }
 
 .email-link {
@@ -187,7 +226,6 @@ h2 {
   text-decoration: none;
   border-bottom: 2px solid transparent;
   transition: border-color 0.3s;
-  /* Prevents overflow */
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -238,12 +276,8 @@ footer {
   font-size: 0.9rem;
 }
 
-/* --- Mobile Queries --- */
+/* --- Combined Mobile Queries --- */
 @media (max-width: 900px) {
-  .services-grid {
-    grid-template-columns: 1fr;
-  }
-  
   .navbar {
     flex-direction: column;
     gap: 1.5rem;
@@ -251,7 +285,8 @@ footer {
   }
 
   .header-hero {
-    text-align: center;
+    text-align: left;
+    align-items: flex-start;
   }
 
   .header-hero h1 {
@@ -260,21 +295,19 @@ footer {
 
   .header-hero p {
     font-size: 1.1rem;
-    margin: 1rem auto;
-  }
-}
-
-@media (max-width: 900px) {
-  .header-hero {
-    text-align: left; /* Changed from center to left */
-    align-items: flex-start; /* Ensures button stays left-aligned */
+    margin: 1rem 0;
   }
 
-  .header-hero p {
-    font-size: 1.1rem;
-    margin: 1rem 0; /* Changed '1rem auto' to '1rem 0' to remove auto-centering */
+  .research-container {
+    flex-direction: column;
+    text-align: left;
+    padding: 1.5rem;
   }
-  
+
+  .services-grid {
+    grid-template-columns: 1fr;
+  }
+
   .email-wrapper {
     padding: 0.5rem 1rem;
     width: 100%;
@@ -282,12 +315,6 @@ footer {
   }
 
   .email-link {
-    /* Fluid font size: scales between 0.9rem and 1.2rem based on screen width */
     font-size: clamp(0.9rem, 4.5vw, 1.2rem);
-  }
-
-  .copy-btn svg {
-    width: 16px;
-    height: 16px;
   }
 }
