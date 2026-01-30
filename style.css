@@ -108,10 +108,10 @@ h2 {
 /* --- Featured Research Section --- */
 .research-container {
   display: flex;
-  gap: 2rem;
+  gap: 3rem;
   align-items: center;
   background: #f4f7f9;
-  padding: 2.5rem;
+  padding: 3rem;
   border-radius: 8px;
 }
 
@@ -123,13 +123,13 @@ h2 {
   width: 100%;
   border-radius: 5px;
   display: block;
-  /* High-quality rendering for technical data */
+  /* High-quality rendering for technical acoustic data */
   image-rendering: -webkit-optimize-contrast;
   image-rendering: high-quality;
 }
 
 .research-content {
-  flex: 2;
+  flex: 1.5;
 }
 
 .research-label {
@@ -150,7 +150,7 @@ h2 {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 2rem;
-  align-items: stretch; /* Ensures all cards match in height */
+  align-items: stretch; 
 }
 
 .service-card {
@@ -168,7 +168,8 @@ h2 {
 }
 
 .card-image {
-  height: 220px; /* Forces identical image height across all cards */
+  /* Height increased to 300px to better support your new 4:3 images */
+  height: 300px; 
   width: 100%;
   overflow: hidden;
   background-color: #e1e8ed;
@@ -177,22 +178,23 @@ h2 {
 .card-image img {
   width: 100%;
   height: 100%;
-  /* This prevents stretching by cropping to fit the box */
+  /* Crops the 4:3 image to fit the 300px window without stretching */
   object-fit: cover; 
   object-position: center;
-  /* Prevents blur on high-DPI screens */
+  /* Eliminates browser smoothing/blurring on high-frequency detail */
   image-rendering: -webkit-optimize-contrast;
   image-rendering: high-quality;
 }
 
 .card-content {
   padding: 2rem;
-  flex-grow: 1; /* Ensures text area expands to keep card bottoms aligned */
+  flex-grow: 1;
 }
 
 .card-content h3 {
   color: #0b3c5d;
   margin-top: 0;
+  font-size: 1.4rem;
 }
 
 /* --- Contact Section --- */
@@ -226,33 +228,6 @@ h2 {
   font-size: 1.5rem;
   font-weight: bold;
   text-decoration: none;
-  transition: border-color 0.3s;
-}
-
-.copy-btn {
-  background: transparent;
-  border: none;
-  color: #328cc1;
-  margin-left: 12px;
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  position: relative;
-}
-
-#copy-status {
-  position: absolute;
-  top: -35px;
-  left: 50%;
-  transform: translateX(-50%);
-  background: #328cc1;
-  color: #fff;
-  padding: 4px 10px;
-  border-radius: 4px;
-  font-size: 0.75rem;
-  opacity: 0;
-  pointer-events: none;
-  transition: opacity 0.3s;
 }
 
 /* --- Footer --- */
@@ -263,38 +238,18 @@ footer {
   font-size: 0.9rem;
 }
 
-/* --- Mobile Queries --- */
+/* --- Responsive Adjustments --- */
 @media (max-width: 900px) {
   .services-grid {
     grid-template-columns: 1fr;
   }
   
+  .card-image {
+    height: 400px; /* On mobile, let the images be even taller/larger */
+  }
+
   .research-container {
     flex-direction: column;
     padding: 1.5rem;
-  }
-
-  .navbar {
-    flex-direction: column;
-    gap: 1.5rem;
-    margin-bottom: 3rem;
-  }
-
-  .header-hero {
-    text-align: left;
-    align-items: flex-start;
-  }
-
-  .header-hero h1 {
-    font-size: 2.2rem;
-  }
-
-  .header-hero p {
-    font-size: 1.1rem;
-    margin: 1rem 0;
-  }
-
-  .email-link {
-    font-size: clamp(0.9rem, 4.5vw, 1.2rem);
   }
 }
