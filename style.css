@@ -102,12 +102,12 @@ body {
 
 /* --- Section Spacing & Headers --- */
 section {
-  padding: 10rem 0; /* Added significant space between sections */
+  padding: 10rem 0; 
 }
 
 h2 {
   color: #0b3c5d;
-  font-size: 2.8rem; /* Increased font size for section headers */
+  font-size: 2.8rem; 
   margin-bottom: 3.5rem;
   font-weight: 700;
 }
@@ -241,7 +241,7 @@ h2 {
 
 /* --- Footer & Privacy Notice --- */
 footer {
-  text-align: center; /* Centers everything in footer */
+  text-align: center; 
   padding: 5rem 0;
   color: #666;
   font-size: 0.95rem;
@@ -249,14 +249,16 @@ footer {
 }
 
 .privacy-notice {
-  display: block;
-  margin-top: 1rem;
+  display: block; /* Ensures it sits on its own line below the copyright */
+  margin: 1.5rem auto 0 auto;
   color: #999;
   text-decoration: none;
+  width: fit-content;
 }
 
 .privacy-notice:hover {
   text-decoration: underline;
+  color: #328cc1;
 }
 
 /* --- Mobile Queries --- */
@@ -267,6 +269,7 @@ footer {
 
   h2 {
     font-size: 2.2rem;
+    margin-bottom: 2rem;
   }
 
   .navbar {
