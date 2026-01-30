@@ -55,6 +55,7 @@ body {
   color: #fff;
   text-decoration: none;
   font-weight: 500;
+  white-space: nowrap;
 }
 
 .header-hero {
@@ -89,56 +90,32 @@ body {
   transition: 0.3s;
 }
 
-.cta-button:hover {
-  background: #fff;
-  color: #0b3c5d;
-}
-
-/* --- Sections --- */
-section {
-  padding: 6rem 0;
-}
-
-h2 {
-  color: #0b3c5d;
-  font-size: 2.2rem;
-  margin-bottom: 2rem;
-}
-
 /* --- Featured Research Section --- */
 .research-container {
   display: flex;
   gap: 3rem;
-  align-items: center;
+  align-items: flex-start;
   background: #f4f7f9;
   padding: 3rem;
   border-radius: 8px;
 }
 
 .research-image {
-  flex: 1;
+  flex: 0 0 40%; /* Prevents the image from being crushed */
+  min-width: 300px;
 }
 
 .research-image img {
   width: 100%;
+  height: auto;
   border-radius: 5px;
   display: block;
-  /* High-quality rendering for technical acoustic data */
   image-rendering: -webkit-optimize-contrast;
   image-rendering: high-quality;
 }
 
 .research-content {
-  flex: 1.5;
-}
-
-.research-label {
-  color: #328cc1;
-  font-weight: bold;
-  text-transform: uppercase;
-  font-size: 0.8rem;
-  display: block;
-  margin-bottom: 0.5rem;
+  flex: 1;
 }
 
 /* --- Services Grid & Cards --- */
@@ -158,43 +135,27 @@ h2 {
   border-radius: 8px;
   box-shadow: 0 10px 30px rgba(0,0,0,0.05);
   overflow: hidden;
-  transition: transform 0.3s ease;
   display: flex;
   flex-direction: column;
 }
 
-.service-card:hover {
-  transform: translateY(-10px);
-}
-
 .card-image {
-  /* Height increased to 300px to better support your new 4:3 images */
-  height: 300px; 
+  height: 300px; /* Supports 4:3 ratio images */
   width: 100%;
   overflow: hidden;
-  background-color: #e1e8ed;
 }
 
 .card-image img {
   width: 100%;
   height: 100%;
-  /* Crops the 4:3 image to fit the 300px window without stretching */
   object-fit: cover; 
   object-position: center;
-  /* Eliminates browser smoothing/blurring on high-frequency detail */
   image-rendering: -webkit-optimize-contrast;
-  image-rendering: high-quality;
 }
 
 .card-content {
   padding: 2rem;
   flex-grow: 1;
-}
-
-.card-content h3 {
-  color: #0b3c5d;
-  margin-top: 0;
-  font-size: 1.4rem;
 }
 
 /* --- Contact Section --- */
@@ -204,12 +165,7 @@ h2 {
   padding: 5rem 2rem;
   text-align: center;
   border-radius: 15px;
-}
-
-.contact-box h2 {
-  color: #fff;
-  margin-top: 0;
-  margin-bottom: 1rem;
+  overflow: hidden;
 }
 
 .email-wrapper {
@@ -217,71 +173,67 @@ h2 {
   align-items: center;
   justify-content: center;
   background: rgba(255, 255, 255, 0.08);
-  padding: 0.6rem 1.2rem;
+  padding: 0.8rem 1.5rem;
   border-radius: 50px;
   border: 1px solid rgba(255, 255, 255, 0.15);
   margin-top: 1rem;
+  max-width: 90%;
 }
 
 .email-link {
   color: #fff;
-  font-size: 1.5rem;
+  font-size: 1.3rem;
   font-weight: bold;
   text-decoration: none;
+  word-break: break-all; /* Forces email to wrap inside box on small screens */
 }
 
-/* --- Footer --- */
-footer {
-  text-align: center;
-  padding: 4rem 0;
-  color: #777;
-  font-size: 0.9rem;
-}
-
-/* --- Responsive Adjustments --- */
-/* --- Updated Mobile Queries --- */
+/* --- Mobile Queries --- */
 @media (max-width: 900px) {
   .navbar {
     flex-direction: column; 
-    gap: 1rem; /* Reduced gap between logo and links */
-    margin-bottom: 2rem;
-    text-align: center;
+    gap: 1rem;
+    margin-bottom: 3rem;
   }
 
   .nav-links {
-    display: flex;
-    flex-direction: row; 
-    flex-wrap: nowrap; /* Forces them to stay on one line */
     justify-content: center;
-    align-items: center;
-    gap: 0.8rem; /* Tightens the space between About, Services, etc. */
+    gap: 0.8rem;
     width: 100%;
     padding: 0;
   }
 
-  .nav-links li {
-    margin: 0; /* Removes any default margins that push "Contact" out of alignment */
-  }
-
   .nav-links a {
-    /* Reducing font size for narrow screens */
-    font-size: 0.85rem; 
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    white-space: nowrap; /* Prevents a single word like "Desk-Based" from breaking */
+    font-size: 0.85rem; /* Shrunk font to keep links on one line */
   }
 
-  /* Adjust Hero and Grid as before */
-  .header-hero h1 {
-    font-size: 2rem;
+  .research-container {
+    flex-direction: column;
+    padding: 1.5rem;
+    align-items: center;
   }
-  
+
+  .research-image {
+    flex: 0 0 100%;
+    width: 100%;
+    min-width: auto;
+    margin-bottom: 1.5rem;
+  }
+
   .services-grid {
     grid-template-columns: 1fr;
   }
+
+  .card-image {
+    height: 250px;
+  }
+
+  .email-link {
+    font-size: 1.1rem;
+  }
 }
 
-/* Extra safety for very small phones (under 380px) */
+/* Extra safety for very narrow phones */
 @media (max-width: 380px) {
   .nav-links {
     gap: 0.5rem;
