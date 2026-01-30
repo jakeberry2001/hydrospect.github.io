@@ -241,55 +241,52 @@ footer {
 /* --- Responsive Adjustments --- */
 /* --- Updated Mobile Queries --- */
 @media (max-width: 900px) {
-  /* 1. Stack Logo and Nav vertically */
   .navbar {
     flex-direction: column; 
-    gap: 1.5rem;
-    margin-bottom: 3rem;
+    gap: 1rem; /* Reduced gap between logo and links */
+    margin-bottom: 2rem;
     text-align: center;
   }
 
-  /* 2. Center the links and give them space */
   .nav-links {
-    flex-direction: row; /* Keep links side-by-side but wrap if needed */
-    flex-wrap: wrap;
+    display: flex;
+    flex-direction: row; 
+    flex-wrap: nowrap; /* Forces them to stay on one line */
     justify-content: center;
-    gap: 1rem;
+    align-items: center;
+    gap: 0.8rem; /* Tightens the space between About, Services, etc. */
     width: 100%;
+    padding: 0;
   }
 
   .nav-links li {
-    margin: 5px 10px;
+    margin: 0; /* Removes any default margins that push "Contact" out of alignment */
   }
 
   .nav-links a {
-    font-size: 1rem;
-    padding: 10px; /* Larger tap target for fingers */
+    /* Reducing font size for narrow screens */
+    font-size: 0.85rem; 
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    white-space: nowrap; /* Prevents a single word like "Desk-Based" from breaking */
   }
 
-  /* 3. Adjust Hero for mobile */
-  .header-hero {
-    text-align: center;
-    align-items: center;
-  }
-
+  /* Adjust Hero and Grid as before */
   .header-hero h1 {
-    font-size: 2.2rem;
+    font-size: 2rem;
   }
-
-  /* 4. Fix Services Grid for single column */
+  
   .services-grid {
     grid-template-columns: 1fr;
   }
-  
-  .card-image {
-    height: 250px; /* Slightly shorter for mobile screens */
-  }
+}
 
-  /* 5. Fix Research Section stack */
-  .research-container {
-    flex-direction: column;
-    padding: 1.5rem;
-    text-align: center;
+/* Extra safety for very small phones (under 380px) */
+@media (max-width: 380px) {
+  .nav-links {
+    gap: 0.5rem;
+  }
+  .nav-links a {
+    font-size: 0.75rem;
   }
 }
