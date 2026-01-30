@@ -125,15 +125,6 @@
     // Update year automatically
     document.getElementById("year").textContent = new Date().getFullYear();
 
-    // Email copy function
-    function copyEmail() {
-      const email = document.getElementById('emailAddr').innerText;
-      navigator.clipboard.writeText(email).then(() => {
-        const status = document.getElementById('copy-status');
-        status.style.opacity = '1';
-        setTimeout(() => { status.style.opacity = '0'; }, 2000);
-      });
-    }
   </script>
 
 </body>
