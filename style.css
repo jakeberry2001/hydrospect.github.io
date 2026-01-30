@@ -239,17 +239,57 @@ footer {
 }
 
 /* --- Responsive Adjustments --- */
+/* --- Updated Mobile Queries --- */
 @media (max-width: 900px) {
+  /* 1. Stack Logo and Nav vertically */
+  .navbar {
+    flex-direction: column; 
+    gap: 1.5rem;
+    margin-bottom: 3rem;
+    text-align: center;
+  }
+
+  /* 2. Center the links and give them space */
+  .nav-links {
+    flex-direction: row; /* Keep links side-by-side but wrap if needed */
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem;
+    width: 100%;
+  }
+
+  .nav-links li {
+    margin: 5px 10px;
+  }
+
+  .nav-links a {
+    font-size: 1rem;
+    padding: 10px; /* Larger tap target for fingers */
+  }
+
+  /* 3. Adjust Hero for mobile */
+  .header-hero {
+    text-align: center;
+    align-items: center;
+  }
+
+  .header-hero h1 {
+    font-size: 2.2rem;
+  }
+
+  /* 4. Fix Services Grid for single column */
   .services-grid {
     grid-template-columns: 1fr;
   }
   
   .card-image {
-    height: 400px; /* On mobile, let the images be even taller/larger */
+    height: 250px; /* Slightly shorter for mobile screens */
   }
 
+  /* 5. Fix Research Section stack */
   .research-container {
     flex-direction: column;
     padding: 1.5rem;
+    text-align: center;
   }
 }
