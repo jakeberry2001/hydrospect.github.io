@@ -105,15 +105,6 @@ h2 {
   margin-bottom: 2rem;
 }
 
-blockquote {
-  font-style: italic;
-  font-size: 1.2rem;
-  color: #555;
-  border-left: 4px solid #328cc1;
-  padding-left: 1.5rem;
-  margin: 2rem 0;
-}
-
 /* --- Featured Research Section --- */
 .research-container {
   display: flex;
@@ -132,6 +123,9 @@ blockquote {
   width: 100%;
   border-radius: 5px;
   display: block;
+  /* High-quality rendering for technical data */
+  image-rendering: -webkit-optimize-contrast;
+  image-rendering: high-quality;
 }
 
 .research-content {
@@ -147,7 +141,7 @@ blockquote {
   margin-bottom: 0.5rem;
 }
 
-/* --- Services Grid --- */
+/* --- Services Grid & Cards --- */
 .services-section {
   background-color: #f4f7f9;
 }
@@ -156,6 +150,7 @@ blockquote {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 2rem;
+  align-items: stretch; /* Ensures all cards match in height */
 }
 
 .service-card {
@@ -173,26 +168,26 @@ blockquote {
 }
 
 .card-image {
+  height: 220px; /* Forces identical image height across all cards */
   width: 100%;
-  height: 100%;
-  object-fit: cover;
-  
-  /* Force the browser to prioritize sharpness */
-  image-rendering: -webkit-optimize-contrast; /* For Chrome, Edge, Safari */
-  image-rendering: crisp-edges;               /* For Firefox */
-  
-  /* Prevents "blur" artifacts on high-resolution screens */
-  transform: translateZ(0);
+  overflow: hidden;
+  background-color: #e1e8ed;
 }
 
 .card-image img {
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  /* This prevents stretching by cropping to fit the box */
+  object-fit: cover; 
+  object-position: center;
+  /* Prevents blur on high-DPI screens */
+  image-rendering: -webkit-optimize-contrast;
+  image-rendering: high-quality;
 }
 
 .card-content {
   padding: 2rem;
+  flex-grow: 1; /* Ensures text area expands to keep card bottoms aligned */
 }
 
 .card-content h3 {
@@ -224,7 +219,6 @@ blockquote {
   border-radius: 50px;
   border: 1px solid rgba(255, 255, 255, 0.15);
   margin-top: 1rem;
-  max-width: 95%;
 }
 
 .email-link {
@@ -232,15 +226,7 @@ blockquote {
   font-size: 1.5rem;
   font-weight: bold;
   text-decoration: none;
-  border-bottom: 2px solid transparent;
   transition: border-color 0.3s;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-}
-
-.email-link:hover {
-  border-bottom-color: #328cc1;
 }
 
 .copy-btn {
@@ -252,12 +238,6 @@ blockquote {
   display: flex;
   align-items: center;
   position: relative;
-  padding: 5px;
-  transition: color 0.2s;
-}
-
-.copy-btn:hover {
-  color: #fff;
 }
 
 #copy-status {
@@ -273,7 +253,6 @@ blockquote {
   opacity: 0;
   pointer-events: none;
   transition: opacity 0.3s;
-  white-space: nowrap;
 }
 
 /* --- Footer --- */
@@ -284,8 +263,17 @@ footer {
   font-size: 0.9rem;
 }
 
-/* --- Combined Mobile Queries --- */
+/* --- Mobile Queries --- */
 @media (max-width: 900px) {
+  .services-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .research-container {
+    flex-direction: column;
+    padding: 1.5rem;
+  }
+
   .navbar {
     flex-direction: column;
     gap: 1.5rem;
@@ -304,22 +292,6 @@ footer {
   .header-hero p {
     font-size: 1.1rem;
     margin: 1rem 0;
-  }
-
-  .research-container {
-    flex-direction: column;
-    text-align: left;
-    padding: 1.5rem;
-  }
-
-  .services-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .email-wrapper {
-    padding: 0.5rem 1rem;
-    width: 100%;
-    box-sizing: border-box;
   }
 
   .email-link {
