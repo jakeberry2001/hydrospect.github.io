@@ -173,8 +173,16 @@ blockquote {
 }
 
 .card-image {
-  height: 200px;
   width: 100%;
+  height: 100%;
+  object-fit: cover;
+  
+  /* Force the browser to prioritize sharpness */
+  image-rendering: -webkit-optimize-contrast; /* For Chrome, Edge, Safari */
+  image-rendering: crisp-edges;               /* For Firefox */
+  
+  /* Prevents "blur" artifacts on high-resolution screens */
+  transform: translateZ(0);
 }
 
 .card-image img {
